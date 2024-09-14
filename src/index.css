@@ -1,3 +1,10 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: auto;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,6 +12,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow: auto;
 }
 
 code {
@@ -17,6 +25,12 @@ code {
   border: none;
   width: 100%;
   cursor: pointer;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
 }
 
 h1{
@@ -46,10 +60,9 @@ footer {
   text-align: center;
   padding: 2rem;
   position: relative;
-  bottom: 0;
-  width: 90%;
+  width: 100%;
   height: 40px;
-  margin-top: 2rem;
+  margin-top: auto; 
 }
 
 footer > img{
@@ -92,6 +105,8 @@ form{
   height: auto;
   flex-wrap: wrap;
   margin: 0 auto;
+  min-height: 100vh; /* Asegura que el contenedor tenga al menos la altura de la ventana */
+  flex-direction: row; 
 }
 
 table {
@@ -119,4 +134,39 @@ tr:nth-child(even) {
 }
 .dark > a {
   color: white;
+}
+
+/* Contact.css */
+
+.contact-container {
+  min-height: 100vh; /* Asegura que el contenedor tenga al menos la altura de la ventana */
+  display: flex;
+  flex-direction: column; /* Permite que el contenido crezca verticalmente */
+}
+
+.contact-heading {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-align: center; /* Centra el título */
+}
+
+.contact-description {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  text-align: center; /* Centra la descripción */
+}
+
+.form-container {
+  width: 100%;
+  max-width: 600px; /* Limita el ancho máximo del formulario */
+}
+
+@media (max-width: 600px) {
+  .contact-heading {
+    font-size: 1.5rem;
+  }
+
+  .contact-description {
+    font-size: 1rem;
+  }
 }
